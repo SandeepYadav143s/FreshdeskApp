@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <script src="https://static.freshdev.io/fdk/2.0/assets/fresh_client.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://static.freshdev.io/fdk/2.0/assets/freshdesk.css"
+    />
+  </head>
+
+  <body>
+    <section class="app-body">
+      <img src="./styles/images/logo.png" alt="Freshworks Logo" width="200" height="60" /><br>
+      <p>App to search articles in Freshworks Community Forum.</p>
+      <input type="text" placeholder="enter the article name" id="search_query" name="aname" required>
+      <br>
+      <button onclick ="getArticleName()" > Search </button>
+    </section>
+    <div id="div">
+      <ul id="topics">
+
+      </ul>
+    
+      
+    </div>
+    <button id="err" style="visibility:hidden;"> </button>
+  </body>
+  <script src="scripts/app.js"></script>
+</html>

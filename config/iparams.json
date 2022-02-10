@@ -1,0 +1,34 @@
+{
+  "freshdesk_api_key": {
+    "display_name": "freshdesk_api_key",
+    "description": "Please enter your freshdesk_api_key",
+    "type": "api_key",
+    "required": true,
+    "type_attributes": {
+      "product": "name of the product"
+    },
+    "secure": true
+  },
+  "discourse_api_key": {
+    "display_name": "discourse_api_key",
+    "description": "Please enter your discourse_api_key",
+    "type": "api_key",
+    "required": true,
+    "type_attributes": {
+      "product": "name of the product"
+    },
+    "secure": true
+  },
+  "freshdesk_domain": {
+    "display_name": "freshdesk_domain",
+    "description": "Please enter your freshdesk_domain",
+    "type": "url",
+    "required": true
+  },
+  "community_domain": {
+    "display_name": "community_domain",
+    "description": "Please enter your community_domain",
+    "type": "url",
+    "required": true
+  }
+}
