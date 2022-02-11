@@ -58,13 +58,10 @@ async function searchArticle(articleName) {
 }
 
 //function to list all the articles related to our search query
-var articleLink
 function listArticles(topics) {
   const htmlString = topics.map((article) => {
-    const url2 = communityDomain + "/t/";
-    articleLink = url2 + article.slug + "/" + article.id;
     return `<li class="article">
-    <button onclick="Paste()" id="apptext">${article.title}</button><br>
+    <button onclick="Paste('${article.slug}','${article.id}')" id="apptext">${article.title}</button><br>
     </li>`;
   })
   document.getElementById('div').style.display = "inline";
@@ -73,6 +70,8 @@ function listArticles(topics) {
 }
 
 //function to paste the article link in ticket editor
-function Paste() {
+function Paste(slug,id) {
+  const url2 = communityDomain + "/t/";
+  const  articleLink = url2 + slug + "/" + id;
   client.interface.trigger("click", { id: "reply", text: `${articleLink}` })
 }
