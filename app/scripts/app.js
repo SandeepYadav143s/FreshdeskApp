@@ -1,22 +1,14 @@
 document.onreadystatechange = function () {
   if (document.readyState === 'interactive') renderApp();
-
   function renderApp() {
     var onInit = app.initialized();
-
-    onInit
-      .then(function getClient(_client) {
+    onInit.then(function getClient(_client) {
         window.client = _client;
-
       });
-
   }
 };
-
-
 //function to get the article name
 function getArticleName() {
-
   const articleName = document.getElementById('search_query').value;
   if (articleName.length < 5) {
     document.getElementById('div').style.display = "none";
@@ -24,16 +16,13 @@ function getArticleName() {
     document.getElementById('err').innerHTML = "Error: Enter minimum 5 characters";
     return;
   }
-
   searchArticle(articleName)
 }
-
 var communityDomain
 const headers = {
   "Authorization": "Basic <%= encode(iparam.discourse_api_key) %>",
   "Accept": "application/json"
 };
-
 //function to search for an article
 async function searchArticle(articleName) {
   const iparam = await client.iparams.get('community_domain');
@@ -56,7 +45,6 @@ async function searchArticle(articleName) {
       document.getElementById('err').innerHTML = "Error: Enter the valid article name";
     });
 }
-
 //function to list all the articles related to our search query
 function listArticles(topics) {
   const htmlString = topics.map((article) => {
@@ -68,7 +56,6 @@ function listArticles(topics) {
   document.getElementById("topics").innerHTML = htmlString;
   document.getElementById('err').style.visibility = "hidden";
 }
-
 //function to paste the article link in ticket editor
 function Paste(slug,id) {
   const url2 = communityDomain + "/t/";
