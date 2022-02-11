@@ -1,0 +1,6 @@
+.fdk/
+coverage/
+.report.json
+.DS_Store
+dist/
+log/

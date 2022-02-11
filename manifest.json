@@ -1,0 +1,29 @@
+{
+  "platform-version": "2.2",
+  "product": {
+    "freshdesk": {
+      "location": {
+        "ticket_sidebar": {
+          "url": "index.html",
+          "icon": "styles/images/icon.svg"
+        }
+      },
+      "events": {
+        "onAppInstall": {
+          "handler": "onAppInstallHandler"
+        },
+        "onExternalEvent": {
+          "handler": "onExternalEventHandler"
+        }
+      }
+    }
+  },
+  "whitelisted-domains": [
+    "https://community.developers.freshworks.com",
+    "https://sandeep477.freshdesk.com"
+  ],
+  "engines": {
+    "node": "12.22.8",
+    "fdk": "7.3.0"
+  }
+}
