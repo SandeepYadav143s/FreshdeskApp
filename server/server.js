@@ -1,17 +1,14 @@
 exports = {
-
     onAppInstallHandler: function () {
         generateTargetUrl()
             .then(function (url) {
                 console.log(url)
                 renderData()
             });
-
     },
     // args is a JSON block containing the payload information.
     // args['iparam'] will contain the installation parameter values.
     onExternalEventHandler: function (args) {
-
         $request.post(
             args.iparams.freshdesk_domain + "/api/v2/solutions/folders/84000198788/articles",
             {
@@ -25,18 +22,14 @@ exports = {
                     "folder_id": 84000198788,
                     "status": 1,
                     "unlock": true
-
                 }
             }
         ).then(response => {
             console.info('Post created successfully');
-
             console.log(response);
         }, error => {
             console.error('Post creation failed');
             console.error(error);
         });
-
     }
-
 };
